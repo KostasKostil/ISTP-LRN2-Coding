@@ -10,8 +10,7 @@ namespace LRN5.Models
         public Type()
         {
             FunctionResults = new List<Function>();
-            MethodBases = new List<Method>();
-            MethodResults = new List<Method>();
+            Methods = new List<Method>();
             FunctionArguments = new List<FunctionArgument>();
             MethodArguments = new List<MethodArgument>();
         }
@@ -25,10 +24,8 @@ namespace LRN5.Models
         public virtual Language Language { get; set; }
 
         public virtual ICollection<Function> FunctionResults { get; set; }
-        
-        public virtual ICollection<Method> MethodBases { get; set; }
-
-        public virtual ICollection<Method> MethodResults { get; set; }
+       
+        public virtual ICollection<Method> Methods{ get; set; }
         
         public virtual ICollection<FunctionArgument> FunctionArguments { get; set; }
         

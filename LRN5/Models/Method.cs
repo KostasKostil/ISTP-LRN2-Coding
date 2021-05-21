@@ -22,7 +22,7 @@ namespace LRN5.Models
 
         public virtual Type BaseType { get; set; }
 
-        public virtual Type ResultType { get; set; }
+        //public virtual Type ResultType { get; set; }
 
         public virtual ICollection<MethodArgument> MethodArguments { get; set; }
     }
