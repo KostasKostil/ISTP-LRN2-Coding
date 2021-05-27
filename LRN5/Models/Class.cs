@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace LRN5.Models
 {
-    public class Function
+    public class Class
     {
-        public Function()
+        public Class()
         {
-            FunctionArguments = new List<FunctionArgument>();
+            Methods = new List<Method>();
         }
 
         public int Id { get; set; }
@@ -18,10 +18,8 @@ namespace LRN5.Models
 
         public int LanguageId { get; set; }
 
-        public int ResultTypeId { get; set; }
-
         public virtual Language Language { get; set; }
 
-        public virtual ICollection<FunctionArgument> FunctionArguments { get; set; }
+        public virtual ICollection<Method> Methods { get; set; }
     }
 }

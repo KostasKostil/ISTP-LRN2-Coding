@@ -9,7 +9,7 @@ namespace LRN5.Models
     {
         public Language()
         {
-            Types = new List<Type>();
+            Types = new List<Class>();
             Functions = new List<Function>();
         }
 
@@ -17,7 +17,7 @@ namespace LRN5.Models
 
         public string Name { get; set; }
 
-        public virtual ICollection<Type> Types { get; set; }
+        public virtual ICollection<Class> Types { get; set; }
        
         public virtual ICollection<Function> Functions { get; set; }
     }

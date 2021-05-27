@@ -20,8 +20,8 @@ namespace LRN5.Models
 
         public int TypeId { get; set; }
 
-        public virtual Function Function { get; set; }
+        public int ParameterIndex { get; set; }
 
-        public virtual Type Type { get; set; }
+        public virtual Function Function { get; set; }
     }
 }

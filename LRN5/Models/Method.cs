@@ -20,10 +20,8 @@ namespace LRN5.Models
 
         public int ResultTypeId { get; set; }
 
-        public virtual Type BaseType { get; set; }
-
-        //public virtual Type ResultType { get; set; }
-
         public virtual ICollection<MethodArgument> MethodArguments { get; set; }
+
+        public virtual Class Type { get; set; }
     }
 }
