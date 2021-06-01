@@ -10,11 +10,9 @@ function getLanguages() {
 
 function addLanguage() {
     const addNameTextbox = document.getElementById('add-name');
-    const addInfoTextbox = document.getElementById('add-info');
 
     const language = {
         name: addNameTextbox.value.trim(),
-        info: addInfoTextbox.value.trim(),
     };
 
     fetch(uri, {
@@ -29,7 +27,6 @@ function addLanguage() {
         .then(() => {
             getLanguages();
             addNameTextbox.value = '';
-            addInfoTextbox.value = '';
         })
         .catch(error => console.error('Unable to add language.', error));
 }
@@ -47,7 +44,6 @@ function displayEditForm(id) {
 
     document.getElementById('edit-id').value = language.id;
     document.getElementById('edit-name').value = language.name;
-    document.getElementById('edit-info').value = language.info;
     document.getElementById('editForm').style.display = 'block';
 }
 
@@ -56,7 +52,6 @@ function updateLanguage() {
     const language = {
         id: parseInt(languageId, 10),
         name: document.getElementById('edit-name').value.trim(),
-        info: document.getElementById('edit-info').value.trim()
     };
 
     fetch(`${uri}/${languageId}`, {
@@ -103,14 +98,10 @@ function _displayLanguages(data) {
         let textNode = document.createTextNode(language.name);
         td1.appendChild(textNode);
 
-        let td2 = tr.insertCell(1);
-        let textNodeInfo = document.createTextNode(language.info);
-        td2.appendChild(textNodeInfo);
-
-        let td3 = tr.insertCell(2);
+        let td3 = tr.insertCell(1);
         td3.appendChild(editButton);
 
-        let td4 = tr.insertCell(3);
+        let td4 = tr.insertCell(2);
         td4.appendChild(deleteButton);
     });
 
